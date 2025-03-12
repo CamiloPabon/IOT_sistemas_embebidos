@@ -1,21 +1,19 @@
 #include <Arduino.h>
 #include <WiFi.h>
 
-const char * ssid = "Rengifo 4G";
-const char * password = "oriom123";
+const char * ssid = "virus5";
+const char * password = "a1b2c3d4";
 
 WiFiServer server(80);
-
-void conectarRedWifi() {
-  Serial.println("Conectando a la red WiFi");
+void conectarRedWifi(){
   WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
+  Serial.print("Estableciendo conexion WiFi..");
+  while(WiFi.status() != WL_CONNECTED) {
     delay(1000);
-    Serial.println("Conectando...");
+    Serial.print(".");
   }
-  Serial.println("Conectado a la red WiFi");
+  Serial.println("\nConectado a la red WiFi");
 }
-
 String getTipoCifrado(wifi_auth_mode_t tipoCifrado){
   switch(tipoCifrado){
     case (WIFI_AUTH_OPEN):
@@ -33,16 +31,14 @@ String getTipoCifrado(wifi_auth_mode_t tipoCifrado){
     case (WIFI_AUTH_MAX):  
             return "WPA_MAX";      
   }
-}
-
-void escanearRedes(){
+}void escanearRedes(){
   int numberOfNetworks = WiFi.scanNetworks();
   Serial.print("Numero de redes encontradas: ");
   Serial.println(numberOfNetworks);
   for (int i = 0; i < numberOfNetworks; i++) {
     Serial.print("Nombre de red: ");
     Serial.println(WiFi.SSID(i));
-    Serial.print("Fuerza de la seÃ±al: ");
+    Serial.print("Fuerza de la señal: ");
     Serial.println(WiFi.RSSI(i));
     Serial.print("Direccion MAC: ");
     Serial.println(WiFi.BSSIDstr(i));
@@ -51,9 +47,7 @@ void escanearRedes(){
     Serial.println(tipoCifradoDescription);
     Serial.println("-----------------------");
   }
-}
-
-void setup() {
+}void setup() {
   Serial.begin(115200);
   pinMode(2, OUTPUT);
   escanearRedes();
@@ -61,9 +55,7 @@ void setup() {
   Serial.print("IP local: ");
   Serial.println(WiFi.localIP());
   server.begin();
-}
-
-void loop() {
+}void loop() {
   // Maneja las peticiones al servidor y controla el LED
   WiFiClient cliente = server.available();
   if(cliente){
