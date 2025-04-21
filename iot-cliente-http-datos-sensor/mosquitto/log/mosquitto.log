@@ -3,3 +3,9 @@
 1745261480: Opening ipv4 listen socket on port 1883.
 1745261480: Opening ipv6 listen socket on port 1883.
 1745261480: mosquitto version 2.0.21 running
+1745261524: New connection from ::1:58728 on port 1883.
+1745261524: New client connected from ::1:58728 as auto-8BED82C4-9ABD-7AFC-8B8B-1D2DFFF91FA0 (p2, c1, k60).
+1745261571: Client auto-8BED82C4-9ABD-7AFC-8B8B-1D2DFFF91FA0 disconnected.
+1745263836: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1745265637: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1745267438: Saving in-memory database to /mosquitto/data//mosquitto.db.
