@@ -20,7 +20,7 @@ void setup() {
 }
 
 void loop() {
-  Temperatura = random(0, 100);
+  Temperatura = random(19, 31);
   humedad = random(0, 100);
   WiFiClient cliente;
 

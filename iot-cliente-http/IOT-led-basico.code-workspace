@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../IOT-led-basico"
+		},
+		{
+			"name": "SERVIDOR HTTP LED",
+			"path": "../SERVIDOR HTTP LED"
+		},
+		{
+			"name": "iot-cliente-http",
+			"path": "."
+		}
+	],
+	"settings": {}
+}

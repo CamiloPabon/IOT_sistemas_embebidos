@@ -1,0 +1,13 @@
+services:
+    timescale:
+        image: timescale/timescaledb:latest-pg13
+        container_name: timescaledb
+        environment:
+            POSTGRES_DB: iot_data
+            POSTGRES_USER: iot_data_user
+            POSTGRES_PASSWORD: a1b2c3d4
+        ports:
+            - "5432:5432"
+        volumes:
+            - ./data:/var/lib/postgresql/data
+        restart: always
